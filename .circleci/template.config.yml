@@ -1,0 +1,46 @@
+e2e-defaults: &monitor-defaults
+  working_directory: ~/code
+  resource_class: small
+  docker:
+    - image: circleci/node:8-browsers # remove -browsers if you're not doing browser tests
+      environment:
+        NPM_CONFIG_LOGLEVEL: error # make npm commands less noisy
+        JOBS: max # https://gist.github.com/ralphtheninja/f7c45bdee00784b41fed
+        E2E_CONCURRENCY: 1 # we recommend 1 concurrency per CPU
+
+restore_cache_keys: &restore_cache_keys
+  keys:
+    - code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+    - code-master-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+
+save_cache: &save_cache
+  key: code-{{ .Branch }}-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+  paths:
+    - node_modules
+
+version: 2
+jobs:
+  e2e-headless:
+    <<: *e2e-defaults
+    steps:
+      - checkout
+      - restore_cache: *restore_cache_keys
+      - run: npm install
+      - run: ./node_modules/.bin/e2e --headless 'tests/**/*.js'
+      - save_cache: *save_cache
+
+  e2e-sauce-labs:
+    <<: *e2e-defaults
+    steps:
+      - checkout
+      - restore_cache: *restore_cache_keys
+      - run: npm install
+      - run: ./node_modules/.bin/e2e --sauce-only 'tests/**/*.js'
+      - save_cache: *save_cache
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - e2e-headless
+      - e2e-sauce-labs

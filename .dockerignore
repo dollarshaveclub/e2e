@@ -1,0 +1,14 @@
+
+.circleci
+.git
+__tests__
+test
+tests
+build
+coverage
+dist
+node_modules
+bower_components
+tmp
+docs
+blueprints

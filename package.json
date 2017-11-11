@@ -1,0 +1,30 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "bin": {
+    "e2e": "./bin/run.js"
+  },
+  "keywords": [
+    "end-to-end",
+    "end",
+    "selenium",
+    "browser",
+    "testing",
+    "test",
+    "runner"
+  ],
+  "files": [
+    "bin",
+    "lib"
+  ]
+}
