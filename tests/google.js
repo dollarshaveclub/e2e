@@ -17,7 +17,7 @@ exports.options = {
     {
       browser: 'ie',
     },
-  ]
+  ],
 }
 
 exports.parameters = {

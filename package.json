@@ -1,13 +1,16 @@
 {
-  "name": "e2e",
+  "name": "@dollarshaveclub/e2e",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Selenium runner",
+  "main": "lib",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "eslint": "eslint . --fix --cache",
+    "eslint:ci": "eslint ."
   },
   "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
   "license": "MIT",
+  "repository": "dollarshaveclub/e2e",
   "jest": {
     "testEnvironment": "node"
   },
@@ -26,5 +29,22 @@
   "files": [
     "bin",
     "lib"
-  ]
+  ],
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "debug": "^3.1.0",
+    "globby": "^6.1.0",
+    "lodash": "^4.17.4",
+    "ms": "^2.0.0",
+    "p-all": "^1.0.0",
+    "saucelabs": "^1.4.0",
+    "selenium-webdriver": "^3.6.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-dollarshaveclub": "^2.2.1",
+    "jest": "^21.2.1"
+  }
 }

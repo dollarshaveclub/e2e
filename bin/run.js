@@ -15,3 +15,5 @@ const program = require('commander')
   .option('-lc, --local-concurrency <n>', 'local test concurrency', parseInt)
   .option('-sc, --sauce-concurrency <n>', 'Sauce Labs test concurrency', parseInt)
   .parse(process.argv)
+
+console.log(program.args)
