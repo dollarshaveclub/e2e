@@ -7,6 +7,7 @@ A end-to-end test runner currently built for:
 
 End-to-end tests is inherently flaky, so we built a runner to help mitigate the flakiness:
 
+- Automatically setup and destroy your `selenium` driver so you don't have to
 - Retry support - retry a test as many times as you'd like
 - Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs for the logs, video, and screenshots
 - Filter tests by browsers
@@ -14,6 +15,8 @@ End-to-end tests is inherently flaky, so we built a runner to help mitigate the 
 - Parallelism and concurrency - run local and remote tests with separate, configurable concurrencies
 - Per-step timeouts - helps debug your E2E tests when your `await`s hang
 - Unwinding - easily run your tests multiple times with different parameters and clients
+
+See our [example tests](tests/).
 
 ## API
 
