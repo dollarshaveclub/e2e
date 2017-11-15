@@ -15,7 +15,7 @@
     "testEnvironment": "node"
   },
   "bin": {
-    "e2e": "./bin/run.js"
+    "dsc-e2e": "./bin/run.js"
   },
   "keywords": [
     "end-to-end",

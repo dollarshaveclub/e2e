@@ -16,4 +16,33 @@ const program = require('commander')
   .option('-sc, --sauce-concurrency <n>', 'Sauce Labs test concurrency', parseInt)
   .parse(process.argv)
 
-console.log(program.args)
+const debug = require('debug')('dsc-monitor:bin')
+const path = require('path')
+
+const findTests = require('../lib/find-tests')
+const runTests = require('../lib')
+
+const tests = findTests(program.args)
+
+const options = {}
+if (program.concurrency && !isNaN(program.concurrency)) options.concurrency = program.concurrency
+
+const runner = runTests(tests, options)
+
+if (program.plugin) {
+  const plugin = require(path.resolve(program.plugin))
+  plugin(runner)
+}
+
+runner.exec().then((results) => {
+  debug('%o', results)
+  if (results.every(result => result.success)) {
+    process.exitCode = 0
+    return
+  }
+
+  process.exitCode = 1
+}).catch((err) => {
+  console.error(err.stack)
+  process.exitCode = 1
+})
