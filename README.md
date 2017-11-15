@@ -5,7 +5,7 @@ A end-to-end test runner currently built for:
 - Official Selenium Webdriver JS SDK - http://seleniumhq.github.io/selenium/docs/api/javascript/
 - Sauce Labs
 
-End-to-end testing is inherently flaky, so we built a runner to help mitigate the flakiness:
+End-to-end tests is inherently flaky, so we built a runner to help mitigate the flakiness:
 
 - Retry support - retry a test as many times as you'd like
 - Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs so that you can have a video
