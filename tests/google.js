@@ -24,6 +24,7 @@ exports.parameters = {
   query: 'how to google things',
 }
 
+// NOTE: driver is async, so how would i do this?
 exports.test = ({ driver, step }, { parameters }) => {
   step('load google.com', async () => {
     await driver.get('https://google.com')
