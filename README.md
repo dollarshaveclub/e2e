@@ -11,7 +11,7 @@ End-to-end tests is inherently flaky, so we built a runner to help mitigate the 
 - Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs for the logs, video, and screenshots
 - Filter tests by browsers
 - Filter tests by local or remote (Sauce Labs) tests
-- Parallelism and concurrency - run local and remote tests with separate, configurable concurrency
+- Parallelism and concurrency - run local and remote tests with separate, configurable concurrencies
 - Per-step timeouts - helps debug your E2E tests when your `await`s hang
 - Unwinding - easily run your tests multiple times with different parameters and clients
 
