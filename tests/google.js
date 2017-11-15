@@ -1,6 +1,6 @@
 
 exports.options = {
-  retries: 2,
+  retries: 1,
   clients: [
     {
       browser: 'chrome',
@@ -20,21 +20,8 @@ exports.options = {
   ],
 }
 
-exports.parameters = {
-  query: 'how to google things',
-}
-
-// NOTE: driver is async, so how would i do this?
-exports.test = ({ driver, step }, { parameters }) => {
+exports.test = ({ driver, step }) => {
   step('load google.com', async () => {
     await driver.get('https://google.com')
-  })
-
-  step(`search ${parameters.query}`, async () => {
-
-  })
-
-  step(`find a result`, async () => {
-
   })
 }
