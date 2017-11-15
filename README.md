@@ -1,18 +1,17 @@
-# @dollarshaveclub/e2e-runner
+# @dollarshaveclub/e2e
 
 A end-to-end test runner currently built for:
 
 - Official Selenium Webdriver JS SDK - http://seleniumhq.github.io/selenium/docs/api/javascript/
 - Sauce Labs
 
-We decided to build our own runner because traditional test frameworks do not easily give us the tools we need.
-Features:
+End-to-end testing is inherently flaky, so we built a runner to help mitigate the flakiness:
 
-- Retry support - these tests tend to be flaky
-- Retry local tests on Sauce Labs - so you can have a video of your failing test
-- Filter by browsers
-- Filter by local or remote (Sauce Labs) tests
-- Concurrency - run local and remote tests with separate, configurable concurrency
+- Retry support - retry a test as many times as you'd like
+- Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs so that you can have a video
+- Filter tests by browsers
+- Filter tests by local or remote (Sauce Labs) tests
+- Parallelism and concurrency - run local and remote tests with separate, configurable concurrency
 - Per-step timeouts - helps debug your E2E tests when your `await`s hang
 - Unwinding - easily run your tests multiple times with different parameters and clients
 
@@ -22,7 +21,7 @@ Features:
 
 ### Tests
 
-#### exports.config<Object>
+#### exports.config\<Object\>
 
 Options for running the test.
 
@@ -31,7 +30,7 @@ Options for running the test.
 Various parameters to run your test.
 Passed to your `.test` function and is intended to be used within it.
 
-#### exports.test<Function>
+#### exports.test<Function>({ driver, step }, { parameters })
 
 #### step(name<String>, fn<AsyncFunction>, options<Object>)
 
