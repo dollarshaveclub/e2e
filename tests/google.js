@@ -18,5 +18,11 @@ exports.test = ({ driver, step }) => {
     debug('loading google')
     await driver.get('https://google.com')
     debug('loaded google')
+  }, {
+    timeout: '30s',
   })
+
+  step.skip('skip this step', async () => {
+    throw new Error('not implemented')
+  }, '10s')
 }
