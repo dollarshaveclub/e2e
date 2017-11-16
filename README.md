@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/dollarshaveclub/e2e/tree/master.svg?style=svg&circle-token=3c62580973ef5525cd6a68b7e57bd8d9e603a91e)](https://circleci.com/gh/dollarshaveclub/e2e/tree/master)
 [![codecov](https://codecov.io/gh/dollarshaveclub/e2e/branch/master/graph/badge.svg?token=RL1k07t3tS)](https://codecov.io/gh/dollarshaveclub/e2e)
+[![Greenkeeper badge](https://badges.greenkeeper.io/dollarshaveclub/e2e.svg?token=53420725e4efa55047668b13f8221d19e6c294e7783481a4300c63fbed4ba71c&ts=1510792360361)](https://greenkeeper.io/)
 
 A end-to-end test runner currently built for:
 
