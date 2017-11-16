@@ -6,18 +6,6 @@ exports.options = {
     {
       browser: 'chrome',
     },
-    {
-      browser: 'firefox',
-    },
-    {
-      browser: 'edge',
-    },
-    {
-      browser: 'safari',
-    },
-    {
-      browser: 'ie',
-    },
   ],
 }
 
