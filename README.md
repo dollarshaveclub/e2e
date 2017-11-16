@@ -1,5 +1,8 @@
 # @dollarshaveclub/e2e
 
+[![CircleCI](https://circleci.com/gh/dollarshaveclub/e2e/tree/master.svg?style=svg&circle-token=3c62580973ef5525cd6a68b7e57bd8d9e603a91e)](https://circleci.com/gh/dollarshaveclub/e2e/tree/master)
+[![codecov](https://codecov.io/gh/dollarshaveclub/e2e/branch/master/graph/badge.svg?token=RL1k07t3tS)](https://codecov.io/gh/dollarshaveclub/e2e)
+
 A end-to-end test runner currently built for:
 
 - Official Selenium Webdriver JS SDK - http://seleniumhq.github.io/selenium/docs/api/javascript/
