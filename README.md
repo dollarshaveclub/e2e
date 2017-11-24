@@ -36,6 +36,7 @@ Options for running the test.
 
 Various parameters to run your test.
 Passed to your `.test` function and is intended to be used within it.
+If your parameters is an array, your test will run multiple times with each object in the array.
 
 #### exports.test<Function>({ driver, step }, { parameters })
 
