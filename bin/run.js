@@ -8,7 +8,6 @@ const program = require('commander')
   .option('--headless', 'run local tests headlessly')
   .option('-s, --sauce', 'run Sauce Labs tests')
   .option('-so, --sauce-only', 'only run tests on Sauce Labs')
-  .option('-L, --no-local', 'do not run local tests (run headless or sauce instead)')
   .option('-b, --browsers <names>', 'only run tests specified for these browsers')
   .option('-ib', '--ignore-browsers <names>', 'ignore running tests for these browsers')
   .option('-c, --concurrency <n>', 'test concurrency', parseInt)
@@ -26,6 +25,12 @@ const tests = findTests(program.args)
 
 const options = {}
 if (program.concurrency && !isNaN(program.concurrency)) options.concurrency = program.concurrency
+if (program.headless) options.headless = true
+if (program.sauce) options.sauce = true
+if (program.sauceOnly) {
+  options.sauce = true
+  options.local = false
+}
 
 const runner = runTests(tests, options)
 
