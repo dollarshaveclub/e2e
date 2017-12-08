@@ -31,6 +31,8 @@ if (program.sauceOnly) {
   options.sauce = true
   options.local = false
 }
+if (program.browsers) options.browsers = program.browsers.split(',').map(trim).filter(Boolean)
+if (program.ignoreBrowsers) options.ignoreBrowsers = program.ignoreBrowsers.split(',').map(trim).filter(Boolean)
 
 const runner = runTests(tests, options)
 
@@ -51,3 +53,7 @@ runner.exec().then((results) => {
   console.error(err.stack)
   process.exitCode = 1
 })
+
+function trim (x) {
+  return x.trim()
+}
