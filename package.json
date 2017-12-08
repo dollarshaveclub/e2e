@@ -24,7 +24,9 @@
     "browser",
     "testing",
     "test",
-    "runner"
+    "runner",
+    "chrome",
+    "headless"
   ],
   "files": [
     "bin",
