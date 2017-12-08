@@ -36,6 +36,7 @@ jobs:
       - restore_cache: *restore_cache_keys
       - run: npm install
       - run: ./bin/run.js --concurrency 2 'tests/**/*.js'
+      - run: ./bin/run.js 'tests-failing/**/*.js' || echo 'FORCED TO PASS'
       - save_cache: *save_cache
 
 workflows:
