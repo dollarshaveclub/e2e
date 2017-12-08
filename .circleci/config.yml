@@ -29,8 +29,18 @@ jobs:
       - run: ./node_modules/.bin/codecov
       - save_cache: *save_cache
 
+  e2e-tests:
+    <<: *test-defaults
+    steps:
+      - checkout
+      - restore_cache: *restore_cache_keys
+      - run: npm install
+      - run: ./bin/run.js --concurrency 2 'tests/**/*.js'
+      - save_cache: *save_cache
+
 workflows:
   version: 2
   commit:
     jobs:
       - test
+      - e2e-tests
