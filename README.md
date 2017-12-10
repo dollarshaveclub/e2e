@@ -14,7 +14,7 @@ We built a runner to help mitigate flakiness and maximize test speed:
 - Retry support - retry a test as many times as you'd like
 - Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs for the logs, video, and screenshots
 - Parallelism and concurrency - run local and remote tests with separate, configurable concurrencies
-- Per-step timeouts - helps debug your E2E tests when your `await`s hang, which is the right way to write Selenium tests
+- Per-step timeouts - helps debug your E2E tests when your `await`s hang, which is the correct way to write Selenium tests
 
 We also added features to make writing and running tests easier:
 
@@ -25,15 +25,57 @@ We also added features to make writing and running tests easier:
 
 See our [example tests](tests/).
 
+## Installation
+
+Install Selenium:
+
+```bash
+brew install selenium-server-standalone chromedriver geckodriver
+```
+
+Start the Selenium server:
+
+```bash
+brew services start selenium-server-standalone
+```
+
+Install node@8+:
+
+```bash
+nvm install 8
+```
+
 ## API
 
 ### Running Tests
+
+Install this package:
+
+```bash
+npm install @dollarshaveclub/e2e
+```
+
+Run the executable:
+
+```bash
+./node_modules/.bin/dsc-e2e -h
+```
 
 ### Tests
 
 #### exports.config\<Object\>
 
 Options for running the test.
+
+Options are:
+
+- `driverTimeout='90s'`
+- `stepTimeout='30s'`
+- `stepSlowThreshold='5s'`
+- `retries=1`
+- `retryWithSauceLabs=true`
+- `clients=[]`
+  - `browser='chrome'`
 
 #### exports.parameters<Object|Array>
 
@@ -43,7 +85,11 @@ If your parameters is an array, your test will for each object in the array as a
 
 #### exports.test<Function>({ driver, step, parameters })
 
+Define your actual test in this function.
+
 #### step(name<String>, fn<AsyncFunction>, options<Object>)
+
+Think of this as a `test()` or `it()`.
 
 #### step.skip()
 
