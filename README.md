@@ -80,13 +80,13 @@ Options are:
 - `clients=[]` - an array of clients to test with.
   - `browser='chrome'`
 
-#### exports.parameters<Object|Array>
+#### exports.parameters\<Object|Array>
 
 Various parameters to run your test.
 Passed to your `.test` function and is intended to be used within it.
 If your parameters is an array, your test will run for each value in the array.
 
-#### exports.test<Function>({ driver, step, parameters })
+#### exports.test\<Function>({ driver, step, parameters })
 
 Define your actual test in this function.
 
@@ -94,7 +94,7 @@ Define your actual test in this function.
 - `step` - define your tests in `step`s
 - `parameters` - the parameters defined for your test via `exports.parameters`
 
-#### step(name<String>, fn<AsyncFunction>, options<Object>)
+#### step(name\<String>, fn\<AsyncFunction>, options\<Object>)
 
 A step in your test. Think of this as a `test()` or `it()` from `mocha` or `jest`.
 As this runner is designed for end-to-end tests, calling each code block `step`s
