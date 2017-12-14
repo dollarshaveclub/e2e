@@ -53,3 +53,4 @@ workflows:
     jobs:
       - test
       - e2e-tests
+      - firefox
