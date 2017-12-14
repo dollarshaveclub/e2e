@@ -38,6 +38,15 @@ jobs:
       - run: DEBUG=dsc-e2e:lib:run-test ./bin/run.js 'tests/**/*.js'
       - save_cache: *save_cache
 
+
+  firefox:
+    <<: *test-defaults
+    steps:
+      - checkout
+      - restore_cache: *restore_cache_keys
+      - run: npm install
+      - run: node firefox-test.js
+
 workflows:
   version: 2
   commit:
