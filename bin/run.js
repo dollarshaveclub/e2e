@@ -24,7 +24,6 @@ const runTests = require('../lib')
 const tests = findTests(program.args)
 
 const options = {}
-if (program.concurrency && !isNaN(program.concurrency)) options.concurrency = program.concurrency
 if (program.headless) options.headless = true
 if (program.sauce) options.sauce = true
 if (program.sauceOnly) {
@@ -33,6 +32,9 @@ if (program.sauceOnly) {
 }
 if (program.browsers) options.browsers = program.browsers.split(',').map(trim).filter(Boolean)
 if (program.ignoreBrowsers) options.ignoreBrowsers = program.ignoreBrowsers.split(',').map(trim).filter(Boolean)
+if (program.concurrency) options.concurrency = program.concurrency
+if (program.sauceConcurrency) options.sauceConcurrency = program.sauceConcurrency
+if (program.localConcurrency) options.localConcurrency = program.localConcurrency
 
 const runner = runTests(tests, options)
 
