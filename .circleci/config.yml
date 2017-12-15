@@ -35,8 +35,8 @@ jobs:
       - checkout
       - restore_cache: *restore_cache_keys
       - run: npm install
-      - run: ./bin/run.js --local-concurrency 2 --sauce-concurrency 1 'tests/**/*.js'
-      - run: ./bin/run.js --local-concurrency 2 --sauce-concurrency 1 'tests-failing/**/*.js' || echo 'FORCED TO PASS'
+      - run: ./bin/run.js --local-concurrency 2 --sauce-concurrency 2 'tests/**/*.js'
+      - run: ./bin/run.js --local-concurrency 2 --sauce-concurrency 2 'tests-failing/**/*.js' || echo 'FORCED TO PASS'
       - save_cache: *save_cache
 
 workflows:
