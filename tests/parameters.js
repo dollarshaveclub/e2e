@@ -16,7 +16,7 @@ exports.parameters = [
     url: 'https://github.com/',
   },
   {
-    url: 'https://www.nytimes.com/',
+    url: 'https://circleci.com/',
   },
 ]
 
