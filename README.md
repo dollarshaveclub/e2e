@@ -115,3 +115,7 @@ Thus, the options for each `step` are:
 #### step.skip()
 
 Same as `step()`, but is not actually ran.
+
+#### exports.description<Function|String>
+
+Description of our test.

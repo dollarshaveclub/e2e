@@ -13,6 +13,10 @@ exports.options = {
   ],
 }
 
+exports.description = `
+Just load https://google.com.
+`
+
 exports.test = ({ driver, step }) => {
   step('load google.com', async () => {
     debug('loading google')
