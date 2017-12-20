@@ -83,7 +83,6 @@ Options are:
   - `width=1280`
   - `height=960`
   - `platform={}` - the platform to run on, specifically on Sauce Labs
-      - `platform='Windows 10'`
       - `width=1280`
       - `height=960`
 - `driver='selenium'` - which driver to use.
