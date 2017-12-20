@@ -1,7 +1,7 @@
 {
   "name": "@dollarshaveclub/e2e",
   "version": "1.0.0",
-  "description": "Selenium runner",
+  "description": "Make End-to-End Testing Great for Once",
   "main": "lib",
   "scripts": {
     "test": "jest --coverage",
@@ -26,7 +26,8 @@
     "test",
     "runner",
     "chrome",
-    "headless"
+    "headless",
+    "puppeteer"
   ],
   "files": [
     "bin",
