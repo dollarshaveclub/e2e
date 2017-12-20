@@ -7,18 +7,19 @@
 A end-to-end test runner currently built for:
 
 - Official Selenium Webdriver JS SDK - http://seleniumhq.github.io/selenium/docs/api/javascript/
+- Google Chrome's Puppeteer - https://github.com/GoogleChrome/puppeteer
 - Sauce Labs
 
 This test runner mitigates test flakiness and maximizes test speed:
 
 - Retry support - retry a test as many times as you'd like
-- Retry local tests on Sauce Labs - if a local test keeps failing, retry it on Sauce Labs the logs, video, and screenshots
+- Retry local tests on Sauce Labs - if a local Selenium test keeps failing, retry it on Sauce Labs the logs, video, and screenshots
 - Parallelism and concurrency - run local and remote tests with separate, configurable concurrencies
 - Per-step timeouts - helps debug your E2E tests when your `await`s hang, which is the correct way to write Selenium tests
 
 It also has features to make writing and running tests easier:
 
-- Automatically setup and destroy your `selenium` driver so you don't have to
+- Automatically setup and destroy your `selenium` or `puppeteer` driver so you don't have to
 - Filter tests by browsers
 - Filter tests by local or remote (Sauce Labs) tests
 - Unwinding - easily run your tests multiple times with different parameters and clients
@@ -79,6 +80,14 @@ Options are:
 - `retryWithSauceLabs=true` - whether to retry failing tests on Sauce Labs when ran with Sauce Labs enabled
 - `clients=[]` - an array of clients to test with.
   - `browser='chrome'`
+  - `width=1280`
+  - `height=960`
+  - `platform={}` - the platform to run on, specifically on Sauce Labs
+      - `platform='Windows 10'`
+      - `width=1280`
+      - `height=960`
+- `driver='selenium'` - which driver to use.
+  - Valid values: `selenium`, `puppeteer`
 
 #### exports.parameters\<Object|Array>
 
@@ -86,13 +95,21 @@ Various parameters to run your test.
 Passed to your `.test` function and is intended to be used within it.
 If your parameters is an array, your test will run for each value in the array.
 
-#### exports.test\<Function>({ driver, step, parameters })
+#### exports.test\<Function>({ step, parameters, ... })
 
 Define your actual test in this function.
 
-- `driver` - the Selenium SDK driver instance
 - `step` - define your tests in `step`s
 - `parameters` - the parameters defined for your test via `exports.parameters`
+
+##### Selenium Options
+
+- `driver` - the Selenium SDK driver instance
+
+##### Puppeteer Options
+
+- `browser` - Puppeteer browser instance
+- `page` - a Puppeteer page instance
 
 #### step(name\<String>, fn\<AsyncFunction>, options\<Object>)
 
@@ -118,4 +135,4 @@ Same as `step()`, but is not actually ran.
 
 #### exports.description<Function|String>
 
-Description of our test.
+Description of your test.
