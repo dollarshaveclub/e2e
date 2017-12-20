@@ -1,8 +1,8 @@
 
 const assert = require('assert')
 
-const findTests = require('../find-tests')
-const runTests = require('..')
+const findTests = require('../lib/find-tests')
+const runTests = require('../lib')
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000
 
