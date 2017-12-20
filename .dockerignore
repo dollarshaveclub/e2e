@@ -3,7 +3,6 @@
 .git
 __tests__
 test
-tests
 build
 coverage
 dist
