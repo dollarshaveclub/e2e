@@ -1,2 +1,4 @@
 ---
 extends: dollarshaveclub
+rules:
+  no-console: 0
