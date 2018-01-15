@@ -49,6 +49,6 @@
     "codecov": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-config-dollarshaveclub": "^3.0.1",
-    "jest": "^22.0.0"
+    "jest": "^22.1.0"
   }
 }
