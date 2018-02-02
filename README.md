@@ -68,7 +68,7 @@ You can define multiple `clients` and multiple `parameters` per test.
 If you have 5 clients and 5 parameters, your tests will run 5x5 = 25 times.
 Keep this in mind as you add `clients` and `parameters`.
 
-#### exports.config\<Object\>
+#### exports.options\<Object\>
 
 Options for running the test.
 
