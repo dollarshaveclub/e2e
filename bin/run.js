@@ -52,6 +52,7 @@ runner.exec().then((results) => {
   }
 
   process.exitCode = 1
+  gracefullyExit()
 }).catch((err) => {
   console.error(err.stack || err)
   process.exitCode = 1
