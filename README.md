@@ -31,7 +31,9 @@ See our [example tests](tests/).
 Install Selenium:
 
 ```bash
-brew install selenium-server-standalone chromedriver geckodriver
+brew tap homebrew/cask
+brew cask install chromedriver
+brew install selenium-server-standalone geckodriver
 ```
 
 Start the Selenium server:
