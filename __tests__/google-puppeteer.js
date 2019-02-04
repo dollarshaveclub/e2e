@@ -10,6 +10,6 @@ test('google w/ default options', async () => {
   const tests = findTests(['tests/google-puppeteer.js'])
   const runner = runTests(tests, {})
   const results = await runner.exec()
-  assert.equal(1, results.length)
+  assert.strictEqual(1, results.length)
   assert(results.every(x => x.success))
 })

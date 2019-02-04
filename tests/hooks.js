@@ -13,8 +13,8 @@ exports.beforeAll = beforeAll => {
   })
 
   beforeAll('before all 2', () => {
-    assert.equal(values.length, 1)
-    assert.deepEqual(values, ['before all 1'])
+    assert.strictEqual(values.length, 1)
+    assert.deepStrictEqual(values, ['before all 1'])
     values.push('before all 2')
   })
 }
