@@ -34,7 +34,7 @@
     "lib"
   ],
   "dependencies": {
-    "chalk": "2.3.0",
+    "chalk": "2.4.2",
     "commander": "2.11.0",
     "debug": "3.1.0",
     "globby": "8.0.0",
