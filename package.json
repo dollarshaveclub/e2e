@@ -41,7 +41,7 @@
     "lodash": "4.17.5",
     "ms": "2.0.0",
     "p-all": "1.0.0",
-    "puppeteer": "1.11.0",
+    "puppeteer": "1.12.2",
     "saucelabs": "1.4.0",
     "selenium-webdriver": "3.6.0"
   },
